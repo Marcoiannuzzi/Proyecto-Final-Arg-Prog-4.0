@@ -13,3 +13,4 @@ $('.light').click( function(){
     $('.light').addClass('invisible');
     $('.dark').removeClass('invisible');
 })
+
