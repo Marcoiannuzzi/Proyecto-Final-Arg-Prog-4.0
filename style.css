@@ -1,0 +1,29 @@
+*{
+    font-family: 'Heebo', sans-serif;
+}
+
+a:hover{
+    text-shadow: 1px 1px 1px rgba(37, 162, 204, 0.467);
+}
+
+.dark:hover{
+    text-shadow: 1px 1px 1px rgba(12, 12, 12, 0.903);
+    cursor: pointer;
+}
+.light:hover{
+    text-shadow: 1px 1px 1px rgba(252, 252, 252, 0.983);
+    cursor: pointer;
+}
+
+.imagenService{
+    width: 250px;
+}
+
+.titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.navlink{
+    font-weight: bold !important;
+}
+

@@ -13,68 +13,67 @@
 </head>
 <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link navlink" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navlink" href="equipo.html">Equipo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navlink" href="servicios.html">Servicios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navlink" href="contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navlink" href="cotizacion.html">Cotizacion</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-secondary dark ms-5">Dark mode</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-secondary light ms-5 invisible">Light mode</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link navlink" aria-current="page" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navlink" href="equipo.html">Equipo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navlink" href="servicios.html">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navlink" href="contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navlink" href="cotizacion.html">Cotizacion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary dark ms-5">Dark mode</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-secondary light ms-5 invisible">Light mode</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
     <main class="mainContatco d-flex flex-column justify-content-center align-items-center p-3">
-        <h1 class="titulo p-4">El equipo</h1>
-        <div class="container d-flex justify-content-center align-items-center p-3 gap-2">
-          <div class="card" style="width: 18rem;">
-            <img src="./img/TEAMIT-serviciosinfraestructura.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Celina</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Ver Perfil</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="./img/TEAMIT-serviciosinfraestructura.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Marco Iannuzzi</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Ver Perfil</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="./img/TEAMIT-serviciosinfraestructura.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cristian</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Ver Perfil</a>
-            </div>
-          </div>
+      <h1 class="titulo p-4">Nuestros Servicios</h1>
+      <h4>Transformamos tu ideas en codigo</h4>
+      <div class="col-8 servicios d-flex justify-content-center align-items-center p-3 gap-5">
+        <div class="container servicios">
+            <h5 class="titulo">Desarrollo de sitios web</h5>
+            <p class="text-muted">Diseñamos y programamos sitios webs para todas las plataformas (PC, tablet, mobile) e integrados a las Redes Sociales. Brindamos soluciones de calidad, con diseño creativo e innovador.</p>
         </div>
+        <img src="./img/web-dev.jpg" class="imagenService rounded mx-auto d-block img-thumbnail" alt="...">
+      </div>
+
+      <div class="col-8 servicios d-flex justify-content-center align-items-center p-3 gap-5 gap-5">
+        <img src="./img/backend.webp" class="imagenService rounded mx-auto d-block img-thumbnail" alt="...">
+        <div class="container servicios">
+            <h5 class="titulo">Desarrollo de Software</h5>
+            <p class="text-muted">Diseñamos y programamos sitios webs para todas las plataformas (PC, tablet, mobile) e integrados a las Redes Sociales. Brindamos soluciones de calidad, con diseño creativo e innovador.</p>
+        </div>
+      </div>
+
+      <div class="col-8 servicios d-flex justify-content-center align-items-center p-3 gap-5">
+          <div class="container servicios">
+              <h5 class="titulo">Bases de Datos</h5>
+              <p class="text-muted">Aumenta tu base de clientes potenciales generando una Base de Datos prospectada con alta contactación. Para cada uno de nuestros clientes construimos Bases a medida.</p>
+          </div>
+        <img src="./img/recuperacion-datos-bbdd-globatika-informatica-sevilla.jpg" class="imagenService rounded mx-auto d-block img-thumbnail" alt="...">
+      </div>
+
     </main>
     <div class="container">
       <footer class="py-5">    
