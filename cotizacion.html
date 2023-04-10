@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de cotización</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="//rickharrison.github.io/validate.js/validate.js"></script>
+    <link rel="stylesheet" href="cotizacion.css" />
   </head>
   <body>
     <header>
@@ -48,13 +50,169 @@
       </nav>
     </header>
     <main>
-      <section></section>
+      <div
+        class="d-flex flex-column justify-content-center align-items-center p-3"
+      >
+        <h2 class="titulo p-4">Formulario de cotización</h2>
+        <p>Contanos que necesitas y te enviamos una cotización</p>
+        
+          <div  id="panel1"><form class="row g-1">
+            <div class="col-md-5">
+              <label for="nombre" class="form-label">Nombre y apellido</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombreCompleto"
+                placeholder="Ingresa tu nombre completo"
+                required
+              />
+            </div>
+            <div class="col-md-5">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="inputGroupPrepend2"
+                  placeholder="Ingresa tu email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-5">
+              <label for="empresa" class="form-label">Empresa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="empresa"
+                placeholder="Empresa"
+              />
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-primary" onclick="siguiente(1)">
+                Siguiente
+              </button>
+            </div></form>
+          </div>
+          <div class="oculto" id="panel2"><form class="row g-1"id="selfreg2">
+            <div class="col-md-3">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input
+                type="text"
+                class="form-control"
+                id="ciudad"
+                placeholder="Ingresa tu ciudad"
+                required
+              />
+            </div>
+            <div class="col-md-3">
+              <label for="provincia" class="form-label">Provincia</label>
+              <select class="form-select" id="provincia" required>
+                <option selected disabled value="">Elige una opcion...</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Ciudad Autónoma de Buenos Aires">
+                  Ciudad Autónoma de Buenos Aires
+                </option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Tierra del Fuego">Tierra del Fuego</option>
+                <option value="Tucumán">Tucumán</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="codPos" class="form-label">Código Postal</label>
+              <input
+                type="text"
+                class="form-control"
+                id="codPos"
+                placeholder="Ingresa tu codigo postal"
+                required
+              />
+            </div>
+            <div class="col-md-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input
+                type="text"
+                class="form-control"
+                id="telefono"
+                placeholder="Ingresa un télefono de contacto"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" onclick="siguiente(2)">
+                Siguiente
+              </button>
+            </div></form>
+          </div>
+          <div class="oculto" id="panel3"><form class="row g-1"id="selfreg3">
+            <div class="col-12">
+              <label for="cotizacion" class="form-label"
+                >Contanos que necesitas</label
+              >
+              <textarea
+                class="form-control"
+                id="mensaje"
+                rows="3"
+                placeholder="Contanos que necesitas, con los mayores detalles posibles, para obtener la cotización"
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="modal bd-example-modal-lg"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+        id="modalErrores"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" id="selfRegMessage">...</div>
+        </div>
+      </div>
     </main>
     <footer></footer>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="cotizacion.js"></script>
   </body>
 </html>
