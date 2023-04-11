@@ -1,17 +1,25 @@
 $(document).ready(function() {
+  const modo = localStorage.getItem('modo');
+  if (modo === 'dark') {
+    dark();
+  } else {
+    light();
+  };
 });
 
-$('.dark').click( function(){
+$('.dark').click( dark =()=>{
     $('html').attr('data-bs-theme','dark');
     $('.dark').addClass('invisible');
     $('.light').removeClass('invisible');
     $('.light').addClass('text-light');
+    localStorage.setItem('modo', 'dark');
 });
 
-$('.light').click( function(){
+$('.light').click( light=()=>{
     $('html').attr('data-bs-theme','light');
     $('.light').addClass('invisible');
     $('.dark').removeClass('invisible');
+    localStorage.setItem('modo', 'light');
 });
 
 const API_URL = 'https://643478b3582420e2317ceb41.mockapi.io';
@@ -30,5 +38,5 @@ fetch(`${API_URL}/Teams`)
       </div>`);
         APIRESPONSE.innerHTML = todoElEquipo;
         console.log(APIRESPONSE);
-    }); 
+  }); 
 

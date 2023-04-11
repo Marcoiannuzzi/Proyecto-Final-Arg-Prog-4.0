@@ -3,7 +3,7 @@
 }
 
 a:hover{
-    text-shadow: 1px 1px 1px rgba(37, 162, 204, 0.467);
+    text-shadow: 1px 1px 1px rgba(55, 63, 222, 0.383);
 }
 
 .dark:hover{
@@ -20,7 +20,8 @@ a:hover{
 }
 
 .titulo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 5px 5px 5px rgba(55, 63, 222, 0.225)
 }
 
 .navlink{
@@ -29,5 +30,9 @@ a:hover{
 
 .card{
     box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742), -5px -5px 5px rgba(55, 64, 222, 0.742) ;
+}
+
+label{
+    font-weight: bolder;
 }
 
