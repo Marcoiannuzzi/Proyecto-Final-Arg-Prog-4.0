@@ -95,14 +95,13 @@ function infoFinal() {
   mensajeFinal.innerHTML = mensaje;
 }
 function descargarPDF() {
-  //TODO ver porque no funciona
+  //TODO ver formato final del pdf
+
   window.jsPDF = window.jspdf.jsPDF;
   var doc = new jsPDF();
-  // Source HTMLElement or a string containing HTML.
   var elementHTML = document.querySelector("#final");
   doc.html(elementHTML, {
     callback: function (doc) {
-      // Save the PDF
       doc.save("sample-document.pdf");
     },
     x: 15,

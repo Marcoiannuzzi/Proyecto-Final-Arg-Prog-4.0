@@ -13,12 +13,8 @@
     />
     <script src="//rickharrison.github.io/validate.js/validate.js"></script>
     <link rel="stylesheet" href="cotizacion.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"
-      integrity="sha512-BagCUdQjQ2Ncd42n5GGuXQn1qwkHL2jCSkxN5+ot9076d5wAI8bcciSooQaI3OG3YLj6L97dKAFaRvhSXVO0/Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body>
     <header>
@@ -83,13 +79,13 @@
                 id="empresa"
                 placeholder="Empresa"
               />
-            </div></form>
-            <div class="col-md-12">
-              <button  class="btn btn-primary" onclick="siguiente(1)">
-                Siguiente
-              </button>
             </div>
-          
+          </form>
+          <div class="col-md-12">
+            <button class="btn btn-primary" onclick="siguiente(1)">
+              Siguiente
+            </button>
+          </div>
         </div>
 
         <div class="oculto" id="panel2">
@@ -104,13 +100,13 @@
                 rows="3"
                 placeholder="Contanos que necesitas, con los mayores detalles posibles, para obtener la cotización"
               ></textarea>
-            </div></form>
-            <div class="col-12">
-              <button class="btn btn-primary" onclick="siguiente(2)">
-                Siguiente
-              </button>
             </div>
-          
+          </form>
+          <div class="col-12">
+            <button class="btn btn-primary" onclick="siguiente(2)">
+              Siguiente
+            </button>
+          </div>
         </div>
 
         <div class="oculto" id="panel3">
