@@ -14,16 +14,14 @@ var validacion1 = new FormValidator(
     if (errors.length > 0) {
       for (var i = 0; i < errors.length; i++) {
         errorString += errors[i].message + "<br />";
-        console.log(errors[i]);
       }
-      displayErrors.innerHTML = errorString;
+      displayErrors.innerHTML = errorString;    
+      $("#modalErrores").modal("show");
     } else {
-      //TODO - Crear función que muestre los datos ingresados en el modal y botón de confirmación
-      //TODO - Crear función que arme PDF ????
       errorString = "No hay errores";
       displayErrors.innerHTML = errorString;
     }
-    $("#modalErrores").modal("show");
+
   }
 );
 var validacion2 = new FormValidator(
@@ -44,15 +42,13 @@ var validacion2 = new FormValidator(
   function (errors, event) {
     var displayErrors = document.getElementById("selfRegMessage");
     var errorString = "";
+    console.log("validacion2");
     if (errors.length > 0) {
       for (var i = 0; i < errors.length; i++) {
         errorString += errors[i].message + "<br />";
-        console.log(errors[i]);
       }
       displayErrors.innerHTML = errorString;
     } else {
-      //TODO - Crear función que muestre los datos ingresados en el modal y botón de confirmación
-      //TODO - Crear función que arme PDF ????
       errorString = "No hay errores";
       displayErrors.innerHTML = errorString;
     }
@@ -75,16 +71,15 @@ var validacion3 = new FormValidator(
     if (errors.length > 0) {
       for (var i = 0; i < errors.length; i++) {
         errorString += errors[i].message + "<br />";
-        console.log(errors[i]);
       }
       displayErrors.innerHTML = errorString;
+      $("#modalErrores").modal("show");
     } else {
-      //TODO - Crear función que muestre los datos ingresados en el modal y botón de confirmación
-      //TODO - Crear función que arme PDF ????
       errorString = "No hay errores";
       displayErrors.innerHTML = errorString;
+      infoFinal();
+      $("#final").modal("show");
     }
-    $("#modalErrores").modal("show");
   }
 );
 validacion1.setMessage("required", "Este campo es obligatorio");
@@ -101,17 +96,68 @@ validacion2.setMessage(
 );
 var numero;
 var errorString = "No hay errores";
-function siguiente (num) {
+function siguiente(num) {
   numero = num;
-  setTimeout(cambiar, 1000);
+  console.log("siguiente");
+  setTimeout(cambiar, 2000);
 }
 
-function cambiar () {
+function cambiar() {
+  console.log("CAMBIAR");
   if (document.getElementById("modalErrores").innerHTML != errorString) {
+    console.log("SALE");
     return;
-  }else{
-  let panelviejo = document.getElementById("panel" + numero);
-  let panelnuevo = document.getElementById("panel" + (numero + 1));
-  panelviejo.classList.add("oculto");
-  panelnuevo.classList.remove("oculto");}
+  } else {
+    console.log("cambiar");
+    let panelviejo = document.getElementById("panel" + numero);
+    let panelnuevo = document.getElementById("panel" + (numero + 1));
+    panelviejo.classList.add("oculto");
+    panelnuevo.classList.remove("oculto");
+  }
+}
+
+function infoFinal() {
+  let nombreFinal = document.getElementById("nombreFinal");
+  let emailFinal = document.getElementById("emailFinal");
+  let empresaFinal = document.getElementById("empresaFinal");
+  let ciudadFinal = document.getElementById("ciudadFinal");
+  let provinciaFinal = document.getElementById("provinciaFinal");
+  let telefonoFinal = document.getElementById("telefonoFinal");
+  let codPosFinal = document.getElementById("codPosFinal");
+  let mensajeFinal = document.getElementById("mensajeFinal");
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("email").value;
+  let empresa = document.getElementById("empresa").value;
+  let ciudad = document.getElementById("ciudad").value;
+  let provincia = document.getElementById("provincia").value;
+  let telefono = document.getElementById("telefono").value;
+  let codPos = document.getElementById("codPos").value;
+  let mensaje = document.getElementById("cotizacion").value;
+  nombreFinal.innerHTML = nombre;
+  emailFinal.innerHTML = email;
+  empresaFinal.innerHTML = empresa;
+  ciudadFinal.innerHTML = ciudad;
+  provinciaFinal.innerHTML = provincia;
+  telefonoFinal.innerHTML = telefono;
+  codPosFinal.innerHTML = codPos;
+  mensajeFinal.innerHTML = mensaje;
+}
+function descargarPDF() {
+  window.jsPDF = window.jspdf.jsPDF;
+
+  var doc = new jsPDF();
+
+  // Source HTMLElement or a string containing HTML.
+  var elementHTML = document.querySelector("#final");
+
+  doc.html(elementHTML, {
+    callback: function (doc) {
+      // Save the PDF
+      doc.save("sample-document.pdf");
+    },
+    x: 15,
+    y: 15,
+    width: 170, //target width in the PDF document
+    windowWidth: 650, //window width in CSS pixels
+  });
 }
