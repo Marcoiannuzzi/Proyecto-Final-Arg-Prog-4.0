@@ -18,6 +18,13 @@ a:hover{
 .imagenService{
     width: 250px;
 }
+.imagenService:hover{
+    box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742)
+}
+
+.servicios{
+    width: 50%;
+}
 
 .titulo{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
