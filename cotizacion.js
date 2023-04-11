@@ -1,6 +1,16 @@
-var validacion1 = new FormValidator(
-  "selfreg1",
+var validacion = new FormValidator(
+  "selfreg",
   [
+    {
+      name: "telefono",
+      display: "Teléfono",
+      rules: "required|numeric",
+    },
+    {
+      name: "codPos",
+      display: "Código Postal",
+      rules: "required|exact_length[4]|numeric",
+    },
     {
       name: "email",
       display: "Email address",
@@ -15,105 +25,31 @@ var validacion1 = new FormValidator(
       for (var i = 0; i < errors.length; i++) {
         errorString += errors[i].message + "<br />";
       }
-      displayErrors.innerHTML = errorString;    
-      $("#modalErrores").modal("show");
-    } else {
-      errorString = "No hay errores";
-      displayErrors.innerHTML = errorString;
-    }
-
-  }
-);
-var validacion2 = new FormValidator(
-  "selfreg2",
-  [
-    {
-      name: "telefono",
-      display: "Teléfono",
-      rules: "required|numeric",
-    },
-    {
-      name: "codPos",
-      display: "Código Postal",
-      rules: "required|exact_length[4]|numeric",
-    },
-  ],
-
-  function (errors, event) {
-    var displayErrors = document.getElementById("selfRegMessage");
-    var errorString = "";
-    console.log("validacion2");
-    if (errors.length > 0) {
-      for (var i = 0; i < errors.length; i++) {
-        errorString += errors[i].message + "<br />";
-      }
-      displayErrors.innerHTML = errorString;
-    } else {
-      errorString = "No hay errores";
-      displayErrors.innerHTML = errorString;
-    }
-    $("#modalErrores").modal("show");
-  }
-);
-var validacion3 = new FormValidator(
-  "selfreg3",
-  [
-    {
-      name: "cotizacion",
-      display: "Contanos que necesitas",
-      rules: "required",
-    },
-  ],
-
-  function (errors, event) {
-    var displayErrors = document.getElementById("selfRegMessage");
-    var errorString = "";
-    if (errors.length > 0) {
-      for (var i = 0; i < errors.length; i++) {
-        errorString += errors[i].message + "<br />";
-      }
       displayErrors.innerHTML = errorString;
       $("#modalErrores").modal("show");
     } else {
-      errorString = "No hay errores";
-      displayErrors.innerHTML = errorString;
       infoFinal();
       $("#final").modal("show");
     }
+    
   }
 );
-validacion1.setMessage("required", "Este campo es obligatorio");
-validacion2.setMessage("required", "Este campo es obligatorio");
-validacion3.setMessage("required", "Este campo es obligatorio");
-validacion1.setMessage("valid_email", "Es necesario un email válido");
-validacion2.setMessage(
+validacion.setMessage("required", "Este campo es obligatorio");
+validacion.setMessage("valid_email", "Es necesario un email válido");
+validacion.setMessage(
   "numeric",
   "Es necesario un teléfono válido. Utilizar sólo números"
 );
-validacion2.setMessage(
+validacion.setMessage(
   "exact_length",
   "Es necesario un código postal válido. Utilizar sólo 4 números"
 );
-var numero;
-var errorString = "No hay errores";
-function siguiente(num) {
-  numero = num;
-  console.log("siguiente");
-  setTimeout(cambiar, 2000);
-}
 
-function cambiar() {
-  console.log("CAMBIAR");
-  if (document.getElementById("modalErrores").innerHTML != errorString) {
-    console.log("SALE");
-    return;
-  } else {
-    console.log("cambiar");
-    let panelviejo = document.getElementById("panel" + numero);
-    let panelnuevo = document.getElementById("panel" + (numero + 1));
-    panelviejo.classList.add("oculto");
-    panelnuevo.classList.remove("oculto");
-  }
+function siguiente(num) {
+  let panelviejo = document.getElementById("panel" + num);
+  let panelnuevo = document.getElementById("panel" + (num + 1));
+  panelviejo.classList.add("oculto");
+  panelnuevo.classList.remove("oculto");
 }
 
 function infoFinal() {
@@ -144,12 +80,9 @@ function infoFinal() {
 }
 function descargarPDF() {
   window.jsPDF = window.jspdf.jsPDF;
-
   var doc = new jsPDF();
-
   // Source HTMLElement or a string containing HTML.
   var elementHTML = document.querySelector("#final");
-
   doc.html(elementHTML, {
     callback: function (doc) {
       // Save the PDF
