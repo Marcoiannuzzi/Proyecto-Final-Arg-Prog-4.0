@@ -28,10 +28,10 @@ var validacion = new FormValidator(
       displayErrors.innerHTML = errorString;
       $("#modalErrores").modal("show");
     } else {
+      event.preventDefault();
       infoFinal();
-      $("#final").modal("show");
+      $("#modalFinal").modal("show");
     }
-    
   }
 );
 validacion.setMessage("required", "Este campo es obligatorio");
@@ -54,21 +54,37 @@ function siguiente(num) {
 
 function infoFinal() {
   let nombreFinal = document.getElementById("nombreFinal");
+
   let emailFinal = document.getElementById("emailFinal");
+
   let empresaFinal = document.getElementById("empresaFinal");
+
   let ciudadFinal = document.getElementById("ciudadFinal");
+
   let provinciaFinal = document.getElementById("provinciaFinal");
+
   let telefonoFinal = document.getElementById("telefonoFinal");
+
   let codPosFinal = document.getElementById("codPosFinal");
+
   let mensajeFinal = document.getElementById("mensajeFinal");
-  let nombre = document.getElementById("nombre").value;
+
+  let nombre = document.getElementById("nombreCompleto").value;
+
   let email = document.getElementById("email").value;
+
   let empresa = document.getElementById("empresa").value;
+
   let ciudad = document.getElementById("ciudad").value;
+
   let provincia = document.getElementById("provincia").value;
+
   let telefono = document.getElementById("telefono").value;
+
   let codPos = document.getElementById("codPos").value;
-  let mensaje = document.getElementById("cotizacion").value;
+
+  let mensaje = document.getElementById("mensaje").value;
+
   nombreFinal.innerHTML = nombre;
   emailFinal.innerHTML = email;
   empresaFinal.innerHTML = empresa;
@@ -79,6 +95,7 @@ function infoFinal() {
   mensajeFinal.innerHTML = mensaje;
 }
 function descargarPDF() {
+  //TODO ver porque no funciona
   window.jsPDF = window.jspdf.jsPDF;
   var doc = new jsPDF();
   // Source HTMLElement or a string containing HTML.
