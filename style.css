@@ -43,7 +43,15 @@ label{
     font-weight: bolder;
 }
 
+img{
+    width: 400px;
+}
+.container {
+    max-width: 900px;
+}
+
 .oculto {
     display: none;
 }
+
 
