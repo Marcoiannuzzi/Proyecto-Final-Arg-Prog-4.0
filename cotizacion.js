@@ -98,7 +98,7 @@ function descargarPDF() {
   //TODO ver formato final del pdf
 
   window.jsPDF = window.jspdf.jsPDF;
-  var doc = new jsPDF();
+  var doc = new jsPDF('l', 'pt', 'a4');
   var elementHTML = document.querySelector("#final");
   doc.html(elementHTML, {
     callback: function (doc) {
@@ -106,7 +106,7 @@ function descargarPDF() {
     },
     x: 15,
     y: 15,
-    width: 170, //target width in the PDF document
-    windowWidth: 650, //window width in CSS pixels
+    width: 570,// target width in the PDF document
+    windowWidth: 1250, //window width in CSS pixels
   });
 }
