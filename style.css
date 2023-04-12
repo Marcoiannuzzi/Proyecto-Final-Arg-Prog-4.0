@@ -43,3 +43,7 @@ label{
     font-weight: bolder;
 }
 
+.oculto {
+    display: none;
+}
+
