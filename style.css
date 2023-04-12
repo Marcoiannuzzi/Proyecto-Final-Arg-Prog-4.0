@@ -50,4 +50,8 @@ img{
     max-width: 900px;
 }
 
+.oculto {
+    display: none;
+}
+
 
