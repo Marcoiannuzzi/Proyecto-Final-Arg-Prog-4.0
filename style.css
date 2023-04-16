@@ -1,61 +1,64 @@
-*{
-    font-family: 'Heebo', sans-serif;
+* {
+  font-family: "Heebo", sans-serif;
 }
 
-a:hover{
-    text-shadow: 1px 1px 1px rgba(55, 63, 222, 0.383);
+a:hover {
+  text-shadow: 1px 1px 1px rgba(55, 63, 222, 0.383);
 }
 
-.dark:hover{
-    text-shadow: 1px 1px 1px rgba(12, 12, 12, 0.903);
-    cursor: pointer;
+.dark:hover {
+  text-shadow: 1px 1px 1px rgba(12, 12, 12, 0.903);
+  cursor: pointer;
 }
-.light:hover{
-    text-shadow: 1px 1px 1px rgba(252, 252, 252, 0.983);
-    cursor: pointer;
-}
-
-.imagenService{
-    width: 250px;
-}
-.imagenService:hover{
-    box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742)
+.light:hover {
+  text-shadow: 1px 1px 1px rgba(252, 252, 252, 0.983);
+  cursor: pointer;
 }
 
-.servicios{
-    width: 50%;
+.imagenService {
+  width: 250px;
+}
+.imagenService:hover {
+  box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742);
 }
 
-.titulo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 5px 5px 5px rgba(55, 63, 222, 0.225)
+.servicios {
+  width: 50%;
 }
 
-.navlink{
-    font-weight: bold !important;
+.titulo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 5px 5px 5px rgba(55, 63, 222, 0.225);
 }
 
-.card{
-    box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742), -5px -5px 5px rgba(55, 64, 222, 0.742) ;
+.navlink {
+  font-weight: bold !important;
 }
 
-label{
-    font-weight: bolder;
+.card {
+  box-shadow: 5px 5px 5px rgba(55, 64, 222, 0.742),
+    -5px -5px 5px rgba(55, 64, 222, 0.742);
+}
+
+label {
+  font-weight: bolder;
 }
 
 .container {
-    max-width: 900px;
+  max-width: 900px;
 }
 
 .oculto {
-    display: none;
+  display: none;
 }
 
-.botonC{
-    margin-top: 10px;
+.botonC {
+  margin-top: 10px;
 }
 
-.obligatorio{
-    color: red;
+.obligatorio {
+  color: red;
 }
-
+.modal-content {
+  padding: 30px;
+}

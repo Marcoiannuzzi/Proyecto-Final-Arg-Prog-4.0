@@ -46,45 +46,73 @@ validacion.setMessage(
 );
 
 function siguiente(num) {
-  let panelviejo = document.getElementById("panel" + num);
-  let panelnuevo = document.getElementById("panel" + (num + 1));
-  panelviejo.classList.add("oculto");
-  panelnuevo.classList.remove("oculto");
+  if (num == 1) {
+    campo = document.getElementById("nombreCompleto").value;
+    if (esVacio(campo)) {
+      mostrarAlerta("El nombre no puede estar vacío");
+    } else if (verificarLetrasEspacios(campo)) {
+      let panelviejo = document.getElementById("panel" + num);
+      let panelnuevo = document.getElementById("panel" + (num + 1));
+      panelviejo.classList.add("oculto");
+      panelnuevo.classList.remove("oculto");
+    } else {
+      mostrarAlerta("El nombre solo puede contener letras y espacios");
+    }
+  } else if (num == 2) {
+    campo = document.getElementById("mensaje").value;
+    if (esVacio(campo)) {
+      mostrarAlerta("El mensaje no puede estar vacío");
+    } else {
+      let panelviejo = document.getElementById("panel" + num);
+      let panelnuevo = document.getElementById("panel" + (num + 1));
+      panelviejo.classList.add("oculto");
+      panelnuevo.classList.remove("oculto");
+    }
+  }
+}
+function mostrarAlerta(frase) {
+  let alerta = document.getElementById("alerta");
+  alerta.innerHTML = frase;
+  alerta.classList.remove("oculto");
+  setTimeout(function () {
+    alerta.classList.add("oculto");
+  }, 3000);
+}
+function mostrarConfirmacion() {
+  let confirmacion = document.getElementById("confirmacion");
+  confirmacion.innerHTML =
+    "¡Gracias por contactarte con nosotros! Te responderemos a la brevedad.";
+  confirmacion.classList.remove("oculto");
+}
+function esVacio(palabra) {
+  if (palabra == "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function verificarLetrasEspacios(palabra) {
+  return /^[A-Za-z\s]*$/.test(palabra);
 }
 
 function infoFinal() {
   let nombreFinal = document.getElementById("nombreFinal");
-
   let emailFinal = document.getElementById("emailFinal");
-
   let empresaFinal = document.getElementById("empresaFinal");
-
   let ciudadFinal = document.getElementById("ciudadFinal");
-
   let provinciaFinal = document.getElementById("provinciaFinal");
-
   let telefonoFinal = document.getElementById("telefonoFinal");
-
   let codPosFinal = document.getElementById("codPosFinal");
-
   let mensajeFinal = document.getElementById("mensajeFinal");
-
   let nombre = document.getElementById("nombreCompleto").value;
-
   let email = document.getElementById("email").value;
-
   let empresa = document.getElementById("empresa").value;
-
   let ciudad = document.getElementById("ciudad").value;
-
   let provincia = document.getElementById("provincia").value;
-
   let telefono = document.getElementById("telefono").value;
-
   let codPos = document.getElementById("codPos").value;
-
   let mensaje = document.getElementById("mensaje").value;
-
   nombreFinal.innerHTML = nombre;
   emailFinal.innerHTML = email;
   empresaFinal.innerHTML = empresa;
@@ -95,18 +123,15 @@ function infoFinal() {
   mensajeFinal.innerHTML = mensaje;
 }
 function descargarPDF() {
-  //TODO ver formato final del pdf
-
   window.jsPDF = window.jspdf.jsPDF;
-  var doc = new jsPDF('l', 'pt', 'a4');
+  var doc = new jsPDF("l", "pt", "a4");
   var elementHTML = document.querySelector("#final");
   doc.html(elementHTML, {
     callback: function (doc) {
-      doc.save("sample-document.pdf");
+      doc.save("confirmacion_pedido_cotizacion.pdf");
     },
     x: 15,
     y: 15,
-    width: 570,// target width in the PDF document
-    windowWidth: 1250, //window width in CSS pixels
   });
+  mostrarConfirmacion();
 }
