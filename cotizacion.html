@@ -79,18 +79,18 @@
       </nav>
     </header>
     <main
-      class="d-flex flex-column justify-content-center align-items-center p-3"
+      class=" d-flex flex-column justify-content-center align-items-center p-3"
     >
-      <div
-        class="d-flex flex-column justify-content-center align-items-center p-3"
+      <div class="col-8"
+        
       >
-        <h2 class="titulo p-4">Formulario de cotización</h2>
-        <p>Contanos que necesitas y te enviamos una cotización</p>
+        <h2 class="titulo p-4 text-center">Formulario de cotización</h2>
+        <p class="text-center">Contanos que necesitas y te enviamos una cotización</p>
 
         <div id="panel1">
           <form class="row g-1">
             <div class="col-md-5">
-              <label for="nombre" class="form-label">Nombre y apellido</label>
+              <label for="nombre" class="form-label">Nombre y apellido <span class="obligatorio">*</span></label>
               <input
                 type="text"
                 class="form-control"
@@ -111,7 +111,7 @@
             </div>
           </form>
           <div class="col-md-12">
-            <button class="btn btn-primary" onclick="siguiente(1)">
+            <button class="btn btn-primary botonC" onclick="siguiente(1)">
               Siguiente
             </button>
           </div>
@@ -121,7 +121,7 @@
           <form class="row g-1">
             <div class="col-12">
               <label for="cotizacion" class="form-label"
-                >Contanos que necesitas</label
+                >Contanos que necesitas <span class="obligatorio">*</span></label
               >
               <textarea
                 class="form-control"
@@ -132,7 +132,7 @@
             </div>
           </form>
           <div class="col-12">
-            <button class="btn btn-primary" onclick="siguiente(2)">
+            <button class="btn btn-primary botonC" onclick="siguiente(2)">
               Siguiente
             </button>
           </div>
@@ -141,7 +141,7 @@
         <div class="oculto" id="panel3">
           <form class="row g-1" id="selfreg">
             <div class="col-md-3">
-              <label for="ciudad" class="form-label">Ciudad</label>
+              <label for="ciudad" class="form-label">Ciudad <span class="obligatorio">*</span></label>
               <input
                 type="text"
                 class="form-control"
@@ -151,7 +151,7 @@
               />
             </div>
             <div class="col-md-3">
-              <label for="provincia" class="form-label">Provincia</label>
+              <label for="provincia" class="form-label">Provincia <span class="obligatorio">*</span></label>
               <select class="form-select" id="provincia" required>
                 <option selected disabled value="">Elige una opcion...</option>
                 <option value="Buenos Aires">Buenos Aires</option>
@@ -193,7 +193,7 @@
               />
             </div>
             <div class="col-md-3">
-              <label for="telefono" class="form-label">Teléfono</label>
+              <label for="telefono" class="form-label">Teléfono <span class="obligatorio">*</span></label>
               <input
                 type="text"
                 class="form-control"
@@ -203,7 +203,7 @@
               />
             </div>
             <div class="col-md-5">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label">Email <span class="obligatorio">*</span></label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">@</span>
                 <input
@@ -217,7 +217,7 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button class="btn btn-primary botonC" type="submit">Enviar</button>
             </div>
           </form>
         </div>
@@ -268,7 +268,7 @@
                 </div>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary" onclick="descargarPDF()">
+                <button class="btn btn-primary botonC" onclick="descargarPDF()">
                   Confirmar y descargar PDF
                 </button>
               </div>
@@ -278,7 +278,7 @@
       </div>
     </main>
     <div class="container">
-      <footer class="py-5">
+      <footer class="py-5 ">
         <div class="d-flex justify-content-center py-4 my-4 border-top">
           <p>&copy; 2023 Empresa, Inc. Todos los derechos reservados.</p>
           <ul class="list-unstyled d-flex">

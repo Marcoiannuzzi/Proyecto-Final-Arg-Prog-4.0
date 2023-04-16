@@ -33,7 +33,7 @@ fetch(`${API_URL}/Teams`)
         <div class="card-body">
           <h5 class="card-title">${equipo.nombre} ${equipo.apellido}</h5>
           <p class="card-text">${equipo.data}</p>
-          <a href="${equipo.linkedin}" class="btn btn-primary" target="_blank">LinkedIn</a>
+          <a href="${equipo.github}" class="btn btn-primary" target="_blank">Ver a GitHub</a>
         </div>
       </div>`);
         APIRESPONSE.innerHTML = todoElEquipo;

@@ -51,4 +51,11 @@ label{
     display: none;
 }
 
+.botonC{
+    margin-top: 10px;
+}
+
+.obligatorio{
+    color: red;
+}
 

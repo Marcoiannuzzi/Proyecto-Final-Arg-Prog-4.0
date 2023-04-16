@@ -51,26 +51,26 @@
         <h1 class="titulo p-4">Formulario de contacto</h1>
         <form class="row col-8 g-3 contactosForm">
           <div class="col-md-4">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+            <label for="nombre" class="form-label">Nombre <span class="obligatorio">*</span></label>
+            <input type="text" class="form-control" id="nombre" required>
           </div>
           <div class="col-md-4">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" placeholder="Ingresa tu apellido" required>
+            <label for="apellido" class="form-label">Apellido <span class="obligatorio">*</span></label>
+            <input type="text" class="form-control" id="apellido"  required>
           </div>
           <div class="col-md-4">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Email <span class="obligatorio">*</span></label>
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
-              <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend2" placeholder="Ingresa tu email" required>
+              <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend2" required>
             </div>
           </div>
           <div class="col-md-6">
-            <label for="ciudad" class="form-label">Ciudad</label>
-            <input type="text" class="form-control" id="ciudad" placeholder="Ingresa tu ciudad" required>
+            <label for="ciudad" class="form-label">Ciudad <span class="obligatorio">*</span></label>
+            <input type="text" class="form-control" id="ciudad" required>
           </div>
           <div class="col-md-3">
-            <label for="provincia" class="form-label">Provincia</label>
+            <label for="provincia" class="form-label">Provincia <span class="obligatorio">*</span></label>
             <select class="form-select" id="provincia" required>
               <option selected disabled value="">Elige una opcion...</option>
               <option value="Buenos Aires">Buenos Aires</option>
@@ -81,7 +81,7 @@
           </div>
           <div class="col-md-3">
             <label for="codPos" class="form-label">Código Postal</label>
-            <input type="text" class="form-control" id="codPos" placeholder="Ingresa tu codigo postal" required>
+            <input type="text" class="form-control" id="codPos" required>
           </div>
           <div class="col-12">
             <div class="form-check">
