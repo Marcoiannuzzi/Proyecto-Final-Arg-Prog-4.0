@@ -37,6 +37,5 @@ fetch(`${API_URL}/Teams`)
         </div>
       </div>`);
         APIRESPONSE.innerHTML = todoElEquipo;
-        console.log(APIRESPONSE);
   }); 
 
