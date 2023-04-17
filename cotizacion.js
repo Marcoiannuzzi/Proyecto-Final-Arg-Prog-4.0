@@ -9,7 +9,7 @@ var validacion = new FormValidator(
     {
       name: "codPos",
       display: "Código Postal",
-      rules: "required|exact_length[4]|numeric",
+      rules: "exact_length[4]|numeric",
     },
     {
       name: "email",
